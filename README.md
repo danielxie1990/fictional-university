@@ -119,3 +119,21 @@ needs to echo out the result
 ------------------------------------------------------------------------------------------------------------
 
 
+wp_equeue_script();
+
+Usage #Usage
+1
+wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
+Links a script file to the generated page at the right time according to the script dependencies, if the script has not been already included and if all the dependencies have been registered. You could either link a script with a handle previously registered using the wp_register_script() function, or provide this function with all the parameters necessary to link a script.
+
+This is the recommended method of linking JavaScript to a WordPress generated page.z`z`
+
+
+function university_files() {
+    wp_enqueue_script('university_js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
+    wp_enqueue_style('university__fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+    wp_enqueue_style('university_main_styles', get_stylesheet_uri());
+    wp_enqueue_style('university_font_awesome_styles', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+}
+
+add_action('wp_enqueue_scripts', 'university_files');

@@ -157,3 +157,36 @@ get_the_title($id) get the specific page title via passed post id -------need ec
 
 get_permalink($id) get the specific page url--------need to echo the result retrived
 
+
+
+
+-------------------------------------------------
+
+# 17. Menu of child page links
+
+wp_list_pages(array())
+
+using a filter array to decide which pages are listed as <li> element
+
+# how to check whether a page is neither a child page or a parent page?
+
+<?php 
+
+        $testArray = get_pages(array(
+
+            'child_of' => get_the_ID()
+        ));
+
+
+        if ($theParent or $testArray) { ?>
+        
+# check if current page is a parent page or a child page
+
+if ($theParent) {
+                $findChildrenOf = $theParent;
+            } else {
+                $findChildrenOf = get_the_ID();
+            }
+
+
+

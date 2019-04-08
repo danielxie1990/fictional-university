@@ -137,3 +137,23 @@ function university_files() {
 }
 
 add_action('wp_enqueue_scripts', 'university_files');
+
+
+
+----------------------------------------------
+
+15. Parent & Child page
+
+# how to get the current page's parent id?
+
+wp_get_post_parent_id(get_the_ID());
+
+# what's the difference between using 
+
+the_title()  get the current page title no arguments! 
+and 
+get_the_title($id) get the specific page title via passed post id -------need echo
+
+
+get_permalink($id) get the specific page url--------need to echo the result retrived
+

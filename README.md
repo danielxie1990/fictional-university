@@ -228,3 +228,17 @@ wp_get_post_parent_id(0) == 16
 
 
 ---------------------------------------------------------------
+
+
+# 20. Blog Listing Page(index.php vs front-page.php)
+
+
+functions used:
+
+the_author_posts_link()
+the_time() https://codex.wordpress.org/Formatting_Date_and_Time
+
+
+get_the_category_list(', ')
+
+the_excerpt()

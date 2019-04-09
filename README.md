@@ -242,3 +242,40 @@ the_time() https://codex.wordpress.org/Formatting_Date_and_Time
 get_the_category_list(', ')
 
 the_excerpt()
+
+
+# 21. Blog continued
+
+paginate_links()
+
+
+single.php - individuals posts
+
+page.php - individuals pages
+
+
+# 22. Blog archives(archive.php)
+
+
+make the archive page's title dynamic?
+
+
+the_archive_title() ------ the_archive_description()
+
+or 
+
+            <?php 
+
+
+                if (is_category()) {
+                    single_cat_title();
+                }
+
+                if (is_author()) {
+                    echo 'Posts by ';
+                    the_author();
+                }
+
+             ?>
+
+

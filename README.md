@@ -222,4 +222,9 @@ is_page('about-us') return true or false
 wp_get_post_parent_id(0) == 16
 0 means the current page's id (same with get_the_ID() -- Retrieve the ID of the current item in the WordPress Loop.)
 
+
+
 # thus we can pass a css class="current-menu-item" to a <li> item,  to indicate what page we are currently viewing via the color changed
+
+
+---------------------------------------------------------------

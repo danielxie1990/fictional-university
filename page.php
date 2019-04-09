@@ -4,7 +4,11 @@
 	// keep looping while we still have post
 	while (have_posts()) {
 		// Function the_post() checks whether the loop has started and then sets the current post by moving, each time, to the next post in the queue.
-		the_post(); ?>
+		the_post(); 
+
+		
+
+		?>
 		
 	<div class="page-banner">
 	    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg'); ?>);"></div>

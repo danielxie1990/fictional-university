@@ -190,3 +190,36 @@ if ($theParent) {
 
 
 
+
+
+--------------------------------------------------------------
+
+# 19. Navigation Menus
+
+# how to register dynamic nav menus
+
+// register_nav_menu('footerMenuLocation', 'Footer Menu Location By Daniel');
+// register_nav_menu('headerMenuLocation', 'Header Menu Location By Daniel');
+
+
+create a menu bind to 'Footer Menu Location By Daniel' or 'Header Menu Location By Daniel' at the admin
+
+
+at header or footer.php, display register menu
+
+wp_nav_menu(array(
+        
+        'theme_location' => 'footerMenuLocation'
+
+))
+
+
+# how to check a current page via slugs?
+
+is_page('about-us') return true or false
+
+# how to check if a current page's parent page is about-us page(ex. post id is 16)?
+wp_get_post_parent_id(0) == 16
+0 means the current page's id (same with get_the_ID() -- Retrieve the ID of the current item in the WordPress Loop.)
+
+# thus we can pass a css class="current-menu-item" to a <li> item,  to indicate what page we are currently viewing via the color changed

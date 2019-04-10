@@ -279,3 +279,53 @@ or
              ?>
 
 
+# 23. Custom Queries
+
+what is a cutom query?
+
+what is a default wordpress query?
+
+By far we haven't had to query any content ourselves.
+
+wordpress automatically queries ocntent based on the current URL.
+
+
+# custom query:
+
+Hey wordpress, I don't care what URL we are currently on. I am going to tell you the exact content that I want to query.
+
+Meaning custom queries allow us to load whatever we want, wherever we want.
+
+
+
+# 24. 
+
+get_post_type() = 'post'
+
+page is just post with type of 'page'
+
+
+how to check a page now is post type?
+
+
+# 30. Custom post types
+
+   <?php 
+
+          $homepagePosts = new WP_Query(array(
+             'posts_per_page' => 2 
+          ));
+          while ($homepagePosts->have_posts()) {
+            $homepagePosts->the_post(); ?>
+
+        <div> </div>
+
+            
+          <?php }
+
+          wp_reset_postdata();
+
+
+         ?>
+
+

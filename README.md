@@ -362,3 +362,21 @@ function university_post_types() {
     ));
 }
 add_action('init', 'university_post_types');
+
+
+# 33 Custom Fields
+
+Industry Standard (Custom Field) Plugins
+
+Don't try to rebuild the wheels yourself
+
+-Advanced Custom Fields (ACF)
+-CMB2(Custom Metaboxes 2)
+
+# when using ACF, you should take the save format and display format into consideration, 
+
+so when you use the field, no mistakes
+<?php 
+                $eventDate = new DateTime(get_field('event_date'));
+                echo $eventDate->format('M');
+             ?>

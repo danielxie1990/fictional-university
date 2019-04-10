@@ -308,24 +308,31 @@ page is just post with type of 'page'
 how to check a page now is post type?
 
 
+
 # 30. Custom post types
 
-   <?php 
+create new folder /mu-plugins inside /wp-content folder
 
-          $homepagePosts = new WP_Query(array(
-             'posts_per_page' => 2 
-          ));
-          while ($homepagePosts->have_posts()) {
-            $homepagePosts->the_post(); ?>
+wp-content/mu-plugins/university-post-types.php
 
-        <div> </div>
+# why?
 
-            
-          <?php }
-
-          wp_reset_postdata();
+To keep Events a must use, even user shifting the theme
 
 
-         ?>
+<?php 
+function university_post_types() {
+    register_post_type('event', array(
 
+        'public' => true,
+        'labels' => array(
+            'name' => 'Events',
+            'add_new_item' => 'Add New Event',
+            'edit_item' => 'Edit Event',
+            'all_items' => 'All Events'
+        ),
+        'menu_icon' => 'dashicons-calendar'
 
+    ));
+}
+add_action('init', 'university_post_types');

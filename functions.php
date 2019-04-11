@@ -22,6 +22,7 @@ add_action('after_setup_theme', 'university_features');
 
 function university_adjust_queries($query) {
 	if (!is_admin() and is_post_type_archive('event') and $query->is_main_query()) {
+		// $query->set('posts_per_page', 1);
 		$query->set('meta_key', 'event_date');
 		$query->set('orderby', 'meta_value_num');
 		$query->set('order', 'ASC');
